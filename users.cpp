@@ -20,7 +20,7 @@ void users::on_adminButton_clicked()
 }
 void users::on_userButton_clicked()
 {
-    userWindow *user = new userWindow;
+   windowuser *user = new windowuser;
   user->setWindowTitle("Користувач");
   user->show();
     this->close();

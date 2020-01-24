@@ -1,5 +1,5 @@
-#ifndef INSERTDATA_H
-#define INSERTDATA_H
+#ifndef ADDNEWPRODUCT_H
+#define ADDNEWPRODUCT_H
 
 #include <QDialog>
 #include <QSqlTableModel>
@@ -10,14 +10,14 @@
 #include "database.h"
 
 namespace Ui {
-class insertData;
+class addnewproduct;
 }
-class insertData : public QDialog
+class addnewproduct : public QDialog
 {
     Q_OBJECT
 public:
-explicit insertData(QWidget *parent = nullptr);
-~insertData();
+explicit addnewproduct(QWidget *parent = nullptr);
+~addnewproduct();
 
 signals:
 void signalReady();
@@ -29,7 +29,7 @@ void on_insert_clicked();
 void on_category_currentIndexChanged(const QString &arg1);
 
 private:
-Ui::insertData *ui;
+Ui::addnewproduct *ui;
 DataBase *db;
 QSqlTableModel *model;
 QSqlQueryModel *queryModel;
@@ -42,4 +42,4 @@ void createUI();
 void addRow();
 };
 
-#endif // INSERTDATA_H
+#endif // ADDNEWPRODUCT_H

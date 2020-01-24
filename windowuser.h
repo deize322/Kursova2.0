@@ -1,21 +1,21 @@
-#ifndef USERWINDOW_H
-#define USERWINDOW_H
+#ifndef WINDOWUSER_H
+#define WINDOWUSER_H
 
 #include <QWidget>
 #include "database.h"
 #include <QtSql/QSqlTableModel>
 
 namespace Ui {
-class userWindow;
+class windowuser;
 }
 
-class userWindow : public QWidget
+class windowuser : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit userWindow(QWidget *parent = nullptr);
-    ~userWindow();
+    explicit windowuser(QWidget *parent = nullptr);
+    ~windowuser();
 
 private slots:
     void slotUpdateModels();
@@ -23,7 +23,7 @@ private slots:
     void on_pushButton_clicked();
 
 private:
-    Ui::userWindow *ui;
+    Ui::windowuser *ui;
     DataBase        *db;
     QSqlTableModel  *model;
     QSqlQuery *query;
@@ -35,4 +35,4 @@ private:
 };
 
 
-#endif // USERWINDOW_H
+#endif // WINDOWUSER_H

@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    adm = new adminCheck();
+    adm = new vuvidcash();
     db = new DataBase();
     db->connectToDataBase();
     db->fillCat("Меблі для ванної");
@@ -63,7 +63,7 @@ void MainWindow::createUI()
 
     void MainWindow::on_insertData_clicked()
 {
-   insertData *initData = new insertData;
+   addnewproduct *initData = new addnewproduct;
   connect(initData, SIGNAL(signalReady()), this, SLOT(slotUpdateModels()));
 
   initData->setWindowTitle("Ввід данних");

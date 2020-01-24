@@ -1,9 +1,9 @@
 #include "vuvidcash.h"
-#include "ui_admincheck.h"
+#include "ui_vuvidcash.h"
 
-adminCheck::adminCheck(QWidget *parent) :
+vuvidcash::vuvidcash(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::adminCheck)
+    ui(new Ui::vuvidcash)
 {
     ui->setupUi(this);
     db = new DataBase();
@@ -22,11 +22,11 @@ adminCheck::adminCheck(QWidget *parent) :
     ui->moneyLabel->setText(q.value(0).toString());
 }
 
-adminCheck::~adminCheck()
+vuvidcash::~vuvidcash()
 {
     delete ui;
 }
-void adminCheck::createUI()
+void vuvidcash::createUI()
 {
     ui->tableView->setModel(model);
     ui->tableView->setColumnHidden(0, true);
@@ -39,7 +39,7 @@ void adminCheck::createUI()
     ui->tableView->horizontalHeader()->setStretchLastSection(false);
 }
 
-void adminCheck::setupModel(const QString &tableName, const QStringList &headers)
+void vuvidcash::setupModel(const QString &tableName, const QStringList &headers)
 {
     model = new QSqlTableModel(this);
     model->setTable(tableName);

@@ -1,24 +1,24 @@
-#ifndef ADMINCHECK_H
-#define ADMINCHECK_H
+#ifndef VUVIDCASH_H
+#define VUVIDCASH_H
 
 #include <QWidget>
 #include <database.h>
 #include <QSqlTableModel>
 namespace Ui {
-class adminCheck;
+class vuvidcash;
 }
-class adminCheck : public QWidget
+class vuvidcash : public QWidget
 {
     Q_OBJECT
 public:
-explicit adminCheck(QWidget *parent = nullptr);
-~adminCheck();
+explicit vuvidcash(QWidget *parent = nullptr);
+~vuvidcash();
 private:
-Ui::adminCheck *ui;
+Ui::vuvidcash *ui;
 DataBase        *db;
 QSqlTableModel  *model;
 void setupModel(const QString &tableName, const QStringList &headers);
 void createUI();
 };
 
-#endif // ADMINCHECK_H
+#endif // VUVIDCASH_H

@@ -32,7 +32,7 @@ DataBase::~DataBase()
                     ;
         return false;
     }
-    return false;
+
 }
 
 bool DataBase::openDataBase()

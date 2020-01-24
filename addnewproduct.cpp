@@ -1,9 +1,9 @@
 #include "addnewproduct.h"
-#include "ui_insertdata.h"
+#include "ui_addnewproduct.h"
 
-insertData::insertData(QWidget *parent) :
+addnewproduct::addnewproduct(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::insertData)
+    ui(new Ui::addnewproduct)
 {
     ui->setupUi(this);
     db = new DataBase();
@@ -12,12 +12,12 @@ insertData::insertData(QWidget *parent) :
     addRow();
 }
 
-insertData::~insertData()
+addnewproduct::~addnewproduct()
 {
     delete ui;
 }
 
-void insertData::on_insert_clicked()
+void addnewproduct::on_insert_clicked()
 {
     data = new QVariantList;
     data->append(ui->nameLine->text());
@@ -34,7 +34,7 @@ void insertData::on_insert_clicked()
 
 }
 
-void insertData::setupModel()
+void addnewproduct::setupModel()
 {
         model = new QSqlTableModel(this);
         model->setTable(TABLE);
@@ -42,7 +42,7 @@ void insertData::setupModel()
         model->select();
 }
 
-void insertData::addRow()
+void addnewproduct::addRow()
 {
     query = new QSqlQuery;
     ui->category->clear();
@@ -56,7 +56,7 @@ void insertData::addRow()
 }
 
 
-void insertData::on_category_currentIndexChanged(const QString &arg1)
+void addnewproduct::on_category_currentIndexChanged(const QString &arg1)
 {
     ui->category->setEditText(ui->category->currentText());
         qDebug()<<ui->category->currentText();

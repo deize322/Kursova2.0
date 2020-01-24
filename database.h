@@ -11,15 +11,15 @@
 #include <QDate>
 #include <QDebug>
 #include <QString>
-#define DATABASE_HOSTNAME   "ExampleDataBase"
-#define DATABASE_NAME       "DataBase.db"
-#define TABLE                   "Goods"
+#define DATABASE_HOSTNAME   "MyDB"
+#define DATABASE_NAME       "Products.db"
+#define TABLE                   "Tovaru"
 #define TABLE_CAT               "Categories"
-#define TABLE_CAT_ID            "Cat_ID"
-#define TABLE_CAT_NAME          "Cat_Name"
-#define TABLE_CAT_COUNT         "Cat_Count"
+#define TABLE_CAT_ID            "CatID"
+#define TABLE_CAT_NAME          "CatName"
+#define TABLE_CAT_COUNT         "CatCount"
 #define TABLE_NAME              "Name"
-#define TABLE_COUNT             "Count"
+#define TABLE_COUNT             "Kilkist"
 #define TABLE_PRICE             "Price"
 #define TABLE_DATE              "Date"
 class DataBase : public QObject

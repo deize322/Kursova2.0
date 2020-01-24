@@ -26,8 +26,8 @@ private:
 Ui::MainWindow  *ui;
 DataBase        *db;
 QSqlTableModel  *model;
-insertData *ins;
-adminCheck *adm;
+addnewproduct *ins;
+vuvidcash *adm;
 private:
 void setupModel(const QString &tableName, const QStringList &headers);
 void createUI();

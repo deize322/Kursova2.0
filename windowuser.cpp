@@ -1,9 +1,9 @@
 #include "windowuser.h"
-#include "ui_userwindow.h"
+#include "ui_windowuser.h"
 
-userWindow::userWindow(QWidget *parent) :
+windowuser::windowuser(QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::userWindow)
+    ui(new Ui::windowuser)
 {
         ui->setupUi(this);
     db = new DataBase();
@@ -25,12 +25,12 @@ db->fillCat("Джакузі");
     this->createUI();
 }
 
-userWindow::~userWindow()
+windowuser::~windowuser()
 {
   delete ui;
 }
 
-    void userWindow::createUI()
+    void windowuser::createUI()
 {
 ui->tableView->setModel(model);
 ui->tableView->setColumnHidden(0, true);
@@ -43,12 +43,12 @@ ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     slotUpdateModels();
 }
 
-            void userWindow::slotUpdateModels()
+            void windowuser::slotUpdateModels()
 {
         model->select();
 }
 
-            void userWindow::setupModel(const QString &tableName, const QStringList &headers)
+            void windowuser::setupModel(const QString &tableName, const QStringList &headers)
 {
         model = new QSqlTableModel(this);
         model->setTable(tableName);
@@ -59,7 +59,7 @@ ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
     model->setSort(0,Qt::AscendingOrder);
 }
 
-void userWindow::on_pushButton_clicked()
+void windowuser::on_pushButton_clicked()
 {
 QSqlQuery qu;
 QString n=model->data(model->index(ui->tableView->currentIndex().row(), 1)).toString();
